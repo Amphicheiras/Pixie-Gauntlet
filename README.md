@@ -1,6 +1,6 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~~~~~ TODO ~~~~~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Button toggle/hold macro?
 
@@ -8,13 +8,9 @@
     - Forward / Backward -> On / Off
     - 6D Gestures
 
-- Print battery level on WebPage
-
 - Suspend BNO055 warnings?
 
 - Put in glove?
-
-- GitHub repo
 
 - Tests
 

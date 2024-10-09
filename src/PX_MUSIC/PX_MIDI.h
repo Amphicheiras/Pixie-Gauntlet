@@ -8,8 +8,8 @@ class PX_GYRO;
 class PX_MIDI
 {
 private:
-	PX_BLACKMAGIC *blackmagic;
-	PX_GYRO *gyroDriver;
+	PX_BLACKMAGIC *blackmagic = nullptr;
+	PX_GYRO *gyroDriver = nullptr;
 
 	// MIDI state transmition (must be over BLACKMAGIC or undefined error)
 	bool pitchTransmit{true}, rollTransmit{true}, yawTransmit{true};
@@ -23,8 +23,10 @@ private:
 	// A MIDI Note buffer has 1 value
 	int MIDINoteOn{10}, MIDINoteOff{0};
 	// Timers
-	unsigned long MIDI_t0;
-	double Arp_1, Arp_2, Arp_3;
+	unsigned long MIDI_t0 = 0;
+	double Arp_1 = 0.0;
+	double Arp_2 = 0.0;
+	double Arp_3 = 0.0;
 	bool controlsActive = true;
 	// Arpeggiator
 	bool arpFlag = false;

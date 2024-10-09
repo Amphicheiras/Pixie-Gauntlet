@@ -4,7 +4,10 @@
 #include <Adafruit_NeoPixel.h>
 #include <ezButton.h>
 
-PX_BUTTON::PX_BUTTON() {}
+PX_BUTTON::PX_BUTTON()
+{
+    BTN_1_STATE = false;
+}
 
 void PX_BUTTON::setDrivers(PX_MIDI *midiDriver)
 {

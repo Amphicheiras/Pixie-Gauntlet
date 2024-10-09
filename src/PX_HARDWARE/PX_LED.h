@@ -34,9 +34,9 @@
 class PX_LED_element
 {
 private:
-    int position;
-    int color[3],
-        brightness;
+    int position = 0;
+    int color[3] = {0, 0, 0};
+    int brightness = 0;
 
 public:
     PX_LED_element();

@@ -59,6 +59,7 @@ void loop()
 {
 	buttonDriver.loop();
 	gyroDriver.loop();
+	serverDriver.loop();
 	midiDriver.loop();
 	fsmDriver.loop();
 	blackmagic.loop();
