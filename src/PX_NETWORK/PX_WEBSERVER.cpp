@@ -38,7 +38,7 @@ void PX_WEBSERVER::begin()
 
 void PX_WEBSERVER::loop()
 {
-    sprintf(htmlBuffer, transmitGyroHTML, 15.0f);
+    sprintf(htmlBuffer, transmitGyroHTML, millis());
 }
 
 // Propagate data to HTML
@@ -142,6 +142,15 @@ void PX_WEBSERVER::setupSaveLoadHandlers()
 
 void PX_WEBSERVER::setupUpdateHandlers()
 {
+    // powerDriver->get_battery_percent()
+    controlServer.on("/getValue", HTTP_GET, [this](AsyncWebServerRequest *request)
+                     { String values = String(this->gyroDriver->getPitch()) + "," +
+                     String(this->gyroDriver->getRoll()) + "," +
+                     String(this->gyroDriver->getYaw()) + "," +
+                     String(this->gyroDriver->getDirectionX()) + "," +
+                     String(this->powerDriver->get_battery_percent());
+                      request->send(200, "text/plain", values); });
+
     controlServer.on("/updateX", HTTP_GET, [this](AsyncWebServerRequest *request)
                      { request->send(200, "text/plain", (this->midiDriver->getPitchTransmission() ? "On" : "Off")); });
 
@@ -154,7 +163,6 @@ void PX_WEBSERVER::setupUpdateHandlers()
 
 void PX_WEBSERVER::controlServerRequests()
 {
-    DBG("WFFW333", powerDriver->get_battery_percent());
     controlServer.onNotFound([](AsyncWebServerRequest *request)
                              { request->send(404, "text/plain", "Not found"); });
 

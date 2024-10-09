@@ -27,7 +27,7 @@ PX_POWER::PX_POWER() {}
 int PX_POWER::get_battery_percent()
 {
     measure_battery_level();
-    return voltage_percent;
+    return supply_voltage;
 }
 
 int PX_POWER::get_battery_level()

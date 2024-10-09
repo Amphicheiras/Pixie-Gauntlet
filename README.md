@@ -8,7 +8,7 @@
     - Forward / Backward -> On / Off
     - 6D Gestures
 
-- Print battery level on WebPage
+- Connect battery gauge cable!
 
 - Suspend BNO055 warnings?
 

@@ -27,6 +27,9 @@ void PX_GYRO::begin()
 
 void PX_GYRO::loop()
 {
+	newAccelX = oldAccelX;
+	newAccelY = oldAccelY;
+	newAccelZ = oldAccelZ;
 	getSensorReadings();
 	// // getCalibratedSensorReadings();
 	// // getCompensatedGravityAccel();
@@ -40,6 +43,10 @@ void PX_GYRO::loop()
 	float accelX = myLinearAccelData.x / 100.0;
 	float accelY = myLinearAccelData.y / 100.0;
 	float accelZ = myLinearAccelData.z / 100.0;
+
+	oldAccelX = accelX;
+	oldAccelY = accelY;
+	oldAccelZ = accelZ;
 
 	// Get the time elapsed since the last measurement
 	unsigned long currentTime = millis();
@@ -332,4 +339,9 @@ float PX_GYRO::getPositionY()
 float PX_GYRO::getPositionZ()
 {
 	return positionZ;
+}
+
+bool PX_GYRO::getDirectionX()
+{
+	return oldAccelX > newAccelX;
 }

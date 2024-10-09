@@ -120,4 +120,5 @@ public:
 	float getPositionX();
 	float getPositionY();
 	float getPositionZ();
+	bool getDirectionX();
 };
