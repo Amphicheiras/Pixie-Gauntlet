@@ -100,8 +100,18 @@ private:
 	float positionPrevious[3] = {0.0, 0.0, 0.0};
 	int accelReadTime = 20;
 	// Variables to hold position and velocity
-	float positionX = 0.0, positionY = 0.0, positionZ = 0.0;
-	float velocityX = 0.0, velocityY = 0.0, velocityZ = 0.0;
+	float oldVelocityX = 0.0f;
+	float oldVelocityY = 0.0f;
+	float oldVelocityZ = 0.0f;
+	float newVelocityX = 0.0f;
+	float newVelocityY = 0.0f;
+	float newVelocityZ = 0.0f;
+	float velocityX = 0.0f;
+	float velocityY = 0.0f;
+	float velocityZ = 0.0f;
+	float positionX = 0.0f;
+	float positionY = 0.0f;
+	float positionZ = 0.0f;
 	// Timekeeping for integration
 	unsigned long lastTime2 = 0;
 
@@ -128,6 +138,12 @@ public:
 	float getPitch();
 	float getRoll();
 	float getYaw();
+	float getAccelerationX();
+	float getAccelerationY();
+	float getAccelerationZ();
+	float getVelocityX();
+	float getVelocityY();
+	float getVelocityZ();
 	float getPositionX();
 	float getPositionY();
 	float getPositionZ();
