@@ -1,0 +1,6 @@
+{
+    "git.ignoreLimitWarning": true,
+    "C_Cpp.codeAnalysis.clangTidy.codeAction.formatFixes": false,
+    "idf.portWin": "COM6",
+    "editor.fontSize": 16
+}
