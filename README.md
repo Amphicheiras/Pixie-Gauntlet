@@ -8,8 +8,6 @@
     - Forward / Backward -> On / Off
     - 6D Gestures
 
-- Connect battery gauge cable!
-
 - Suspend BNO055 warnings?
 
 - Put in glove?

@@ -22,15 +22,18 @@
 #define BATTERY_CRITICAL 0
 
 // POWER SUPPLY
-#define BATTERY_GAUGE_PIN 34
+#define BATTERY_GAUGE_PIN 33
 //
 
 class PX_POWER
 {
     // 0-100%: 4h45m 3200mAh
 private:
-    float raw_voltage;
-    int supply_voltage, voltage_percent, voltageNormalized, voltageSampleBuffer[10];
+    float raw_voltage = 0.0f;
+    int supply_voltage = 0;
+    float voltage_percent = 0.0f;
+    float voltageNormalized = 0.0f;
+    float voltageSampleBuffer[10] = {0.0f};
     // Timers
     unsigned long POWER_t0 = millis();
 

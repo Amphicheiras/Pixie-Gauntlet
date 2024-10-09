@@ -7,9 +7,9 @@ class PX_BLACKMAGIC
 {
 private:
 	// Virtual Grid current target
-	int virtualTarget;
-	PX_GYRO *gyroDriver;
-	PX_MIDI *midiDriver;
+	int virtualTarget = 0;
+	PX_GYRO *gyroDriver = nullptr;
+	PX_MIDI *midiDriver = nullptr;
 
 	// pop_XY = population XY, Mmin_XY = XY min movement, Mmax_XY = XY max movement
 	int virtualGrid(int pop_X, int pop_Y, float Mmin_X, float Mmax_X, float Mmin_Y, float Mmax_Y);

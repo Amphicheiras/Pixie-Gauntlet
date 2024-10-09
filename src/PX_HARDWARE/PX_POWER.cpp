@@ -1,10 +1,5 @@
 #include <PX_HARDWARE/PX_POWER.h>
 
-float raw_voltage;
-int supply_voltage, voltage_percent, voltageNormalized, voltageSampleBuffer[10];
-// Timers
-unsigned long POWER_t0 = millis();
-
 void PX_POWER::begin()
 {
     measure_battery_level();
@@ -27,7 +22,7 @@ PX_POWER::PX_POWER() {}
 int PX_POWER::get_battery_percent()
 {
     measure_battery_level();
-    return supply_voltage;
+    return voltage_percent;
 }
 
 int PX_POWER::get_battery_level()

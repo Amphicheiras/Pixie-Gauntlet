@@ -13,10 +13,10 @@ class PX_MIDI;
 class PX_FSM
 {
 private:
-	PX_GYRO *gyroDriver;
-	PX_MIDI *midiDriver;
+	PX_GYRO *gyroDriver = nullptr;
+	PX_MIDI *midiDriver = nullptr;
 	// Timers
-	unsigned long FSM_t0;
+	unsigned long FSM_t0 = 0;
 
 public:
 	PX_FSM();

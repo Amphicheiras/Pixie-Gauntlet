@@ -53,19 +53,32 @@ private:
 	// Calibration parameters
 	const int CALIBRATION_SAMPLES = 100;
 	// YPR raw values
-	float pitch, roll, yaw;
+	float pitch = 0.0f;
+	float roll = 0.0f;
+	float yaw = 0.0f;
 	// Quaternia values
-	double q0, q1, q2, q3;
+	double q0 = 0.0;
+	double q1 = 0.0;
+	double q2 = 0.0;
+	double q3 = 0.0;
 	// XYZ raw acceleration values
-	double axRaw, ayRaw, azRaw;
+	double axRaw = 0.0;
+	double ayRaw = 0.0;
+	double azRaw = 0.0;
 	// XYZ calibrated acceleration values
-	double axCal, ayCal, azCal;
+	double axCal = 0.0;
+	double ayCal = 0.0;
+	double azCal = 0.0;
 	// XYZ g compensated acceleration values
-	double axComp, ayComp, azComp;
+	double axComp = 0.0;
+	double ayComp = 0.0;
+	double azComp = 0.0;
 	// XYZ position raw values
-	double xPosition, yPosition, zPosition;
+	double xPosition = 0.0;
+	double yPosition = 0.0;
+	double zPosition = 0.0;
 	// Heading deviation from Svalbard
-	double initHeading;
+	double initHeading = 0.0;
 	// Acceleration MATH for drum hit
 	double oldAccelX{0}, newAccelX{0}, highestAccelX{0}, highestDiffX{0}, accelDiffX{0};
 	double oldAccelY{0}, newAccelY{0}, highestAccelY{0}, highestDiffY{0}, accelDiffY{0};
@@ -77,14 +90,14 @@ private:
 	// Timers
 	unsigned long GYRO_t0 = millis(), GYRO_t1 = millis(), GYRO_t_accel = millis(), lastTime = 0;
 	// 3D position
-	double dT;
+	double dT = 0.0;
 	double xVelocity = 0.0;
 	double yVelocity = 0.0;
 	double zVelocity = 0.0;
 	double displacement[3] = {0.0, 0.0, 0.0};
-	float orientation;
-	float positionCurrent[3];
-	float positionPrevious[3];
+	float orientation = 0.0;
+	float positionCurrent[3] = {0.0, 0.0, 0.0};
+	float positionPrevious[3] = {0.0, 0.0, 0.0};
 	int accelReadTime = 20;
 	// Variables to hold position and velocity
 	float positionX = 0.0, positionY = 0.0, positionZ = 0.0;
@@ -97,8 +110,6 @@ private:
 	void getSensorReadings();
 	void calibrateGravityVector();
 	void calibrateAccelerometer();
-	// ax, ay, az: accelerometer readings in m/s², dT: time difference between readings (ms), velocity: variable, displacement: variable
-	void getDisplacement();
 	void updateRelevantPosition(float *positionCurrent, float *positionPrevious, float *displacement);
 	float get3DPosition(float *positionCurrent, float *positionPrevious, float *displacement);
 	void getFilteredAccel();
@@ -121,4 +132,6 @@ public:
 	float getPositionY();
 	float getPositionZ();
 	bool getDirectionX();
+	// ax, ay, az: accelerometer readings in m/s², dT: time difference between readings (ms), velocity: variable, displacement: variable
+	void getDisplacement();
 };

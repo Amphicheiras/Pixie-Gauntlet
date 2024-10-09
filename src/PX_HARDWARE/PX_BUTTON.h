@@ -30,7 +30,7 @@ class PX_MIDI;
 class PX_BUTTON
 {
 private:
-    PX_MIDI *midiDriver;
+    PX_MIDI *midiDriver = nullptr;
 
     // BUTTON position pinZ
     int BUTTON_POSITION_PIN[3] = {2, 18, 23};
@@ -39,9 +39,12 @@ private:
     int BTN_2_PIN = BUTTON_POSITION_PIN[BTN_2_POSITION];
     int BTN_3_PIN = BUTTON_POSITION_PIN[BTN_3_POSITION];
     // BUTTON current states & past states
-    bool BTN_1_STATE, BTN_1_STATE_past;
-    bool BTN_2_STATE, BTN_2_STATE_past;
-    bool BTN_3_STATE, BTN_3_STATE_past;
+    bool BTN_1_STATE = false;
+    bool BTN_1_STATE_past = false;
+    bool BTN_2_STATE = false;
+    bool BTN_2_STATE_past = false;
+    bool BTN_3_STATE = false;
+    bool BTN_3_STATE_past = false;
     // Button toggle flags
     bool toggleFlag_1 = false;
     bool toggleFlag_2 = false;
