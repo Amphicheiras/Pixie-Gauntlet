@@ -12,6 +12,17 @@ const char *const transmitGyroHTML = R"=====(
       form {text-align: center;}
       {text-align: center;}
     </style>
+    <script>
+      function fetchValue() {
+        fetch('/getValue')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('presetValue').innerHTML = data;
+          })
+          .catch(error => console.error('Error fetching value:', error));
+      }
+      setInterval(fetchValue, 16); // Fetch every 16 milliseconds (~60Hz)
+    </script>
   </head>
   <body>
     <h1>~~~~~ Jam the object ~~~~~</h1>

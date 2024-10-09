@@ -29,6 +29,7 @@ private:
     PX_GYRO *gyroDriver;
     PX_WiFi *wifiDriver;
 
+    char htmlBuffer[2048];
     AwsTemplateProcessor callback;
     String HTMLprocessor(const String &var);
     void setupMIDIHandlers();

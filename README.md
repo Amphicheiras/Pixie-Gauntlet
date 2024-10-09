@@ -14,8 +14,6 @@
 
 - Put in glove?
 
-- GitHub repo
-
 - Tests
 
 - Multithreading

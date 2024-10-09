@@ -38,6 +38,7 @@ void PX_WEBSERVER::begin()
 
 void PX_WEBSERVER::loop()
 {
+    sprintf(htmlBuffer, transmitGyroHTML, 15.0f);
 }
 
 // Propagate data to HTML
