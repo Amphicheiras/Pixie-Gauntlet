@@ -5,12 +5,10 @@
 - Button toggle/hold macro?
 
 - 3D space
-    - Forward / Backward -> On / Off
+    - Fix velocity drift
     - 6D Gestures
 
 - Suspend BNO055 warnings?
-
-- Put in glove?
 
 - Tests
 
@@ -20,14 +18,10 @@
 
 - Clean code
 
-- PROMOTE LINKEDIN
-    - 500+ connections
-    - GitHub documentation
-
-- BUILD MORE HARDWARE for MARK, TITO, XOUSO
+- BUILD MORE HARDWARE!
 
 - rtpMIDI
-    - Fast rptMIDI (re)connect
+    - Fast rptMIDI (re)connect?
     - Embedd rtpMIDI in ESP32?
 
 .
