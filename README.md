@@ -30,6 +30,12 @@
 
 - LAYER 2
 
+### Pixie Gauntlet v0.1
+
+## MANUAL
+
+
+
 HARDWARE:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true" alt="PX_BOARD_TOP" width="400">
