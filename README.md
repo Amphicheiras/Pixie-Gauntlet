@@ -36,6 +36,7 @@
 
 - LAYER 2
 
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true" alt="PX_BOARD_TOP" width="300" height="200">
 
 
 ![PX_BOARD_TOP](https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true)
