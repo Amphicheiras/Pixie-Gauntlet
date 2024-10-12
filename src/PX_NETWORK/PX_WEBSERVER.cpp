@@ -144,9 +144,10 @@ void PX_WEBSERVER::setupUpdateHandlers()
 {
     // powerDriver->get_battery_percent()
     controlServer.on("/getValue", HTTP_GET, [this](AsyncWebServerRequest *request)
-                     { String values = String(this->gyroDriver->getPitch()) + "," +
-                     String(this->gyroDriver->getRoll()) + "," +
-                     String(this->gyroDriver->getYaw()) + "," +
+                     { String values =
+                     String(this->gyroDriver->getVelocityX()) + "," +
+                     String(this->gyroDriver->getVelocityY()) + "," +
+                     String(this->gyroDriver->getVelocityZ()) + "," +
                      String(this->gyroDriver->getDirectionX()) + "," +
                      String(this->powerDriver->get_battery_percent());
                       request->send(200, "text/plain", values); });

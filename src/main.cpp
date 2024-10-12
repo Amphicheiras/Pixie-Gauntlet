@@ -46,7 +46,7 @@ void setup()
 	DBG(F("==================== BOOT MIDI ==================="));
 	midiDriver.setDrivers(&gyroDriver, &blackmagic);
 	midiDriver.begin();
-	DBG(F("===================== BOOT FSM ==================="));
+	DBG(F("==================== BOOT FSM ===================="));
 	fsmDriver.setDrivers(&gyroDriver, &midiDriver);
 	fsmDriver.begin();
 	DBG(F("================= BOOT BLACKMAGIC ================"));

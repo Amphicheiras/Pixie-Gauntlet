@@ -78,16 +78,12 @@ void PX_BUTTON::loop()
             toggleFlag_2 = !toggleFlag_2;
             if (toggleFlag_2)
             {
-                DBG("TEST1");
                 midiDriver->enableControl();
-                DBG("TEST2");
                 analogWrite(LED_G, 80);
             }
             else
             {
-                DBG("TEST3");
                 midiDriver->disableControl();
-                DBG("TEST4");
                 analogWrite(LED_G, LOW);
             }
         }
@@ -121,7 +117,6 @@ void PX_BUTTON::loop()
         }
         break;
     default:
-        DBG("WTF");
     }
 
     // Update old BTN states

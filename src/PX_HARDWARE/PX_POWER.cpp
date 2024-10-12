@@ -7,7 +7,6 @@ void PX_POWER::begin()
 
 void PX_POWER::loop()
 {
-    
 }
 
 void PX_POWER::measure_battery_level()
