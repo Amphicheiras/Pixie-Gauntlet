@@ -5,7 +5,7 @@
 - Button toggle/hold macro?
 
 - 3D space
-    - Forward / Backward -> On / Off
+    - Fix velocity drift
     - 6D Gestures
 
 - Suspend BNO055 warnings?
@@ -20,11 +20,9 @@
 
 - Clean code
 
-- PROMOTE LINKEDIN
-    - 500+ connections
-    - GitHub documentation
+- Documentation / Manual
 
-- BUILD MORE HARDWARE for MARK, TITO, XOUSO
+- BUILD MORE HARDWARE
 
 - rtpMIDI
     - Fast rptMIDI (re)connect

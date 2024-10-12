@@ -36,22 +36,6 @@ private:
 	// Constants
 	const double GRAVITY = 9.81;	   // Acceleration due to gravity (m/s^2)
 	const double GRAVITY_LSB = 1000.0; // Conversion factor for raw data to g
-	// Acceleration calibration offsets
-	double accelX_offset = 0.0;
-	double accelY_offset = 0.0;
-	double accelZ_offset = 0.0;
-	// Gravity calibration offsets
-	double gravityX_offset = 0.0;
-	double gravityY_offset = 0.0;
-	double gravityZ_offset = 0.0;
-	double axFilter = 0.0;
-	double ayFilter = 0.0;
-	double azFilter = 0.0;
-	double prevOutputX = 0.0;
-	double prevOutputY = 0.0;
-	double prevOutputZ = 0.0;
-	// Calibration parameters
-	const int CALIBRATION_SAMPLES = 100;
 	// YPR raw values
 	float pitch = 0.0f;
 	float roll = 0.0f;
@@ -62,71 +46,47 @@ private:
 	double q2 = 0.0;
 	double q3 = 0.0;
 	// XYZ raw acceleration values
-	double axRaw = 0.0;
-	double ayRaw = 0.0;
-	double azRaw = 0.0;
-	// XYZ calibrated acceleration values
-	double axCal = 0.0;
-	double ayCal = 0.0;
-	double azCal = 0.0;
-	// XYZ g compensated acceleration values
-	double axComp = 0.0;
-	double ayComp = 0.0;
-	double azComp = 0.0;
-	// XYZ position raw values
-	double xPosition = 0.0;
-	double yPosition = 0.0;
-	double zPosition = 0.0;
-	// Heading deviation from Svalbard
-	double initHeading = 0.0;
-	// Acceleration MATH for drum hit
-	double oldAccelX{0}, newAccelX{0}, highestAccelX{0}, highestDiffX{0}, accelDiffX{0};
-	double oldAccelY{0}, newAccelY{0}, highestAccelY{0}, highestDiffY{0}, accelDiffY{0};
-	double oldAccelZ{0}, newAccelZ{0}, highestAccelZ{0}, highestDiffZ{0}, accelDiffZ{0};
-	// For drum hit
-	int hit{-1};
-	int drumHitDebounce{100} /*(ms)*/;
-	int drumHitThreshold{650};
-	// Timers
-	unsigned long GYRO_t0 = millis(), GYRO_t1 = millis(), GYRO_t_accel = millis(), lastTime = 0;
-	// 3D position
-	double dT = 0.0;
-	double xVelocity = 0.0;
-	double yVelocity = 0.0;
-	double zVelocity = 0.0;
-	double displacement[3] = {0.0, 0.0, 0.0};
-	float orientation = 0.0;
-	float positionCurrent[3] = {0.0, 0.0, 0.0};
-	float positionPrevious[3] = {0.0, 0.0, 0.0};
-	int accelReadTime = 20;
-	// Variables to hold position and velocity
-	float oldVelocityX = 0.0f;
-	float oldVelocityY = 0.0f;
-	float oldVelocityZ = 0.0f;
-	float newVelocityX = 0.0f;
-	float newVelocityY = 0.0f;
-	float newVelocityZ = 0.0f;
+	double accelerationX = 0.0;
+	double accelerationY = 0.0;
+	double accelerationZ = 0.0;
+	// Velocity
 	float velocityX = 0.0f;
 	float velocityY = 0.0f;
 	float velocityZ = 0.0f;
+	// Position
 	float positionX = 0.0f;
 	float positionY = 0.0f;
 	float positionZ = 0.0f;
 	// Timekeeping for integration
 	unsigned long lastTime2 = 0;
+	// Heading deviation from Svalbard
+	double initHeading = 0.0;
+	// Acceleration MATH for drum hit
+	int hit = -1;
+	int drumHitDebounce = 100; /*(ms)*/
+	int drumHitThreshold = 650;
+	// X
+	double previousAccelX = 0.0;
+	double highestAccelX = 0.0;
+	double highestDiffX = 0.0;
+	double accelDiffX = 0.0;
+	// Y
+	double previousAccelY = 0.0;
+	double highestAccelY = 0.0;
+	double highestDiffY = 0.0;
+	double accelDiffY = 0.0;
+	// Z
+	double previousAccelZ = 0.0;
+	double highestAccelZ = 0.0;
+	double highestDiffZ = 0.0;
+	double accelDiffZ = 0.0;
+	// Timers
+	unsigned long GYRO_t0 = millis(), GYRO_t1 = millis(), GYRO_t_accel = millis(), lastTime = 0;
 
 	void resetHeading();
 	double getRelativeHeading(double globalHeading, double headingDrift);
 	void getSensorReadings();
-	void calibrateGravityVector();
-	void calibrateAccelerometer();
-	void updateRelevantPosition(float *positionCurrent, float *positionPrevious, float *displacement);
-	float get3DPosition(float *positionCurrent, float *positionPrevious, float *displacement);
-	void getFilteredAccel();
-	// Function to compensate for gravity in all axes
-	void getCompensatedGravityAccel();
-	void getCalibratedSensorReadings();
-	bool edgeDetection(double newAccel, double oldAccel);
+	void getMotionTracking();
 
 public:
 	PX_GYRO();
@@ -148,6 +108,6 @@ public:
 	float getPositionY();
 	float getPositionZ();
 	bool getDirectionX();
-	// ax, ay, az: accelerometer readings in m/s², dT: time difference between readings (ms), velocity: variable, displacement: variable
-	void getDisplacement();
+	bool getDirectionY();
+	bool getDirectionZ();
 };
