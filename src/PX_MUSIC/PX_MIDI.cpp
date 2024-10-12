@@ -89,6 +89,14 @@ void PX_MIDI::loop()
 
 void PX_MIDI::sendControls()
 {
+	if (gyroDriver->getVelocityX() > 0)
+	{
+		MIDI.sendNoteOn(20, 100, 1);
+	}
+	else
+	{
+		MIDI.sendNoteOff(20, 100, 1);
+	}
 	// Transmit YPR
 	if (pitchTransmit)
 	{

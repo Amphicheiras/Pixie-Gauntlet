@@ -21,8 +21,8 @@ void PX_GYRO::begin()
 	resetHeading();
 	DBG("Init Heading:", initHeading);
 	// To see heading value
-	delay(1000);
-	calibrateAccelerometer();
+	// delay(1000);
+	// calibrateAccelerometer();
 }
 
 void PX_GYRO::loop()
