@@ -35,3 +35,7 @@
 .
 
 - LAYER 2
+
+
+
+![src_structure](https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true)
