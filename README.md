@@ -21,7 +21,7 @@ The ESP32 pinout for this project can be seen below:
 
 ## EMBEDDED SOFTWARE:
 
-The Pixie project is a continuation of the UF0 project, aiming for better code practices and motion sensor algorithms rather than feature implementation. The code structure is now more explicit, with better hierarchy and OOP, still, under development.
+The Pixie project is a continuation of the UF0 project, aiming for better code practices and motion sensor algorithms. The code structure is now more explicit, with better hierarchy and OOP, still, under development.
 
 The basic components of this project are the:
 - Hardware
