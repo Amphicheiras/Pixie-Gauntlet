@@ -1,6 +1,6 @@
 # Pixie Gauntlet
 
-## Compact Motion Tracking Wireless MIDI Controller
+## Compact Motion-Tracking Wireless MIDI Controller
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_PROMO.jpg" alt="PX_BOARD_TOP" width="400">
 
@@ -34,7 +34,43 @@ Externally powered by lithium batteries:
 
 ## HARDWARE:
 
-For this project I decided to solder the hardware together to have permanent, stable connections. I started with a perf board and designed the possible layouts in order to get the most compact piece of hardware. The following is what I came at:
+For this project I decided to solder the hardware together to have permanent, stable connections. I started with a perf board and designed the possible layouts in order to get the most compact piece of hardware.
+
+**Attempt #1**:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_ATTEMPT_1.jpg" alt="PX_ATTEMPT_1" width="400">
+
+**Attempt #2**:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_ATTEMPT_2.jpg" alt="PX_ATTEMPT_2" width="400">
+
+**Final Attempt**:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_BOARD.jpg" alt="PX_BOARD" width="400">
+
+Now, the soldering..
+
+**Phase #1**:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_1.jpg" alt="PX_EARLY_BOARD_1" width="400">
+
+**Phase #2**:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_2.jpg" alt="PX_EARLY_BOARD_2" width="400">
+
+**Phase #3**:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_3.jpg" alt="PX_EARLY_BOARD_3" width="400">
+
+The circuit without the ESP32. You can now see the BNO055 (IMU) (black) and the TP4056 (battery (dis)charger) (blue) IC's.
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_WITHOUT_ESP32.jpg" alt="PX_WITHOUT_ESP32" width="400">
+
+Then the caseing was deisgned.
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_CASEING.jpg" alt="PX_CASEING" width="400">
+
+The following is the final circuit product:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true" alt="PX_BOARD_TOP" width="400">
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_BOTTOM.jpg?raw=true" alt="PX_BOARD_BOTTOM" width="400">
@@ -55,7 +91,7 @@ For the battery gauge I make a simple voltage divider using 2x10kΩ resistors. T
 
 ## Power Schematic:
 
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_schem_POWER_.png" alt="PX_BOARD_PCB" width="400">
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_schem_POWER.png" alt="PX_SCHEM_POWER" width="400">
 
 Notice that the V+ of the battery is connected to the switch (S1), and both the gauge and the TP4056's B+ are connected to the other end of the switch, to completely kill the amperage from the system.
 
