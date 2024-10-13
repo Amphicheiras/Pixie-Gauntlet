@@ -2,6 +2,8 @@
 
 ## Compact Motion-Tracking Wireless MIDI Controller
 
+**!!! DEMO VIDEO ---> https://drive.google.com/file/d/1lhsPMKKbq0_hhStSr28U_LeOdEvPMwc7/view?usp=sharing <--- !!!**
+
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_PROMO.jpg" alt="PX_BOARD_TOP" width="400">
 
 Externally powered by lithium batteries:
@@ -59,27 +61,6 @@ Then the casing was designed.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_CASEING.jpg" alt="PX_CASEING" width="400">
 
-Now, the soldering..
-
-**Phase #1**: Solder the hardware component to the perf board.
-
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_1.jpg" alt="PX_EARLY_BOARD_1" width="400">
-
-**Phase #2**: Solder the connections between the hardware components.
-
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_2.jpg" alt="PX_EARLY_BOARD_2" width="400">
-
-**Phase #3**: Solder the jumper wires for the rest of the connections.
-
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_3.jpg" alt="PX_EARLY_BOARD_3" width="400">
-
-The final circuit:
-
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true" alt="PX_BOARD_TOP" width="400">
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_BOTTOM.jpg?raw=true" alt="PX_BOARD_BOTTOM" width="400">
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_FRONT.jpg?raw=true" alt="PX_BOARD_FRONT" width="400">
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_BACK.jpg?raw=true" alt="PX_BOARD_BACK" width="400">
-
 The corresponding PCB trace-out would look something like this:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_BOARD_PCB.png?raw=true" alt="PX_BOARD_PCB" width="400">
@@ -99,6 +80,27 @@ For the battery gauge I make a simple voltage divider using 2x10kΩ resistors. T
 Notice that the V+ of the battery is connected to the switch (S1), and both the gauge and the TP4056's B+ are connected to the other end of the switch, to completely kill the amperage from the system.
 
 *Thought - The battery gauge interferes with the IMU, maybe pull-up resistors for the I2C lines will fix this*
+
+## Now, the soldering..
+
+**Phase #1**: Solder the hardware component to the perf board.
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_1.jpg" alt="PX_EARLY_BOARD_1" width="400">
+
+**Phase #2**: Solder the connections between the hardware components.
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_2.jpg" alt="PX_EARLY_BOARD_2" width="400">
+
+**Phase #3**: Solder the jumper wires for the rest of the connections.
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_3.jpg" alt="PX_EARLY_BOARD_3" width="400">
+
+The final circuit:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true" alt="PX_BOARD_TOP" width="400">
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_BOTTOM.jpg?raw=true" alt="PX_BOARD_BOTTOM" width="400">
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_FRONT.jpg?raw=true" alt="PX_BOARD_FRONT" width="400">
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_BACK.jpg?raw=true" alt="PX_BOARD_BACK" width="400">
 
 ## EMBEDDED SOFTWARE:
 
