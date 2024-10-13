@@ -13,6 +13,9 @@ Externally powered by lithium batteries:
 - 6-dimensional motion tracking (3x Euler Angles + 3x Linear Acceleration)
 - MIDI over WiFi
 - Control Webpage
+  - Solo/Start/Stop Transmissions
+  - View the 6D values
+  - Save/Load Preset
 - Li-ion power supply
 - 3x LED Buttons + 3x Modes
   - By pressing all 3 buttons, you go to the next mode 
