@@ -1,5 +1,35 @@
 # Pixie Gauntlet
 
+## Compact Motion Tracking Wireless MIDI Controller
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_PROMO.jpg" alt="PX_BOARD_TOP" width="400">
+
+Externally powered by lithium batteries:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_WHOLE.jpg" alt="PX_BOARD_TOP" width="400">
+
+**Features**:
+
+- 6-dimentional motion tracking (3x Euler Angles + 3x Linear Acceleration)
+- MIDI over WiFi
+- Control Webpage
+- Li-ion power supply
+- 3x LED Buttons + 3x Modes
+  - By pressing all 3 buttons, you go to the next mode 
+  - Mode 1:
+    - Button 1(Red): Play/Stop MIDI Note
+    - Button 2(Green): Activate/Deactivate MIDI Controls
+    - Button 3(Blue): Custom MIDI On/Off parameter (Mapped from DAW)
+  - Mode 2:
+    - Button 1(Red): Enable/Disable Pitch transmission
+    - Button 2(Green): Enable/Disable Roll transmission
+    - Button 3(Blue): Enable/Disable Yaw transmission
+  - Mode 3:
+    - Button 1(Red): Enable/Disable Acceleration X transmission
+    - Button 2(Green): Enable/Disable Acceleration Y transmission
+    - Button 3(Blue): Enable/Disable Acceleration Z transmission
+  - Each button's LED blinks to the corresponding active mode
+
 ***Under continuous development***
 
 ## HARDWARE:
@@ -21,7 +51,9 @@ The ESP32 pinout for this project can be seen below:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_ESP32_PINOUT.png?raw=true" alt="PX_ESP32_PINOUT" width="700">
 
-For the battery gauge I make a simple voltage divider using 2x10kΩ resistors. This is necessary because the output voltage of the battery (3.7V - 4,2V) exceeds the maximum Vin (3.3V) of the ESP32 analog input pins. The power schematic follows:
+For the battery gauge I make a simple voltage divider using 2x10kΩ resistors. This is necessary because the output voltage of the battery (3.7V - 4,2V) exceeds the maximum Vin (3.3V) of the ESP32 analog input pins. 
+
+## Power Schematic:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_schem_POWER_.png" alt="PX_BOARD_PCB" width="400">
 
