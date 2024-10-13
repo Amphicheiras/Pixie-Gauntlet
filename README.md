@@ -44,7 +44,7 @@ For this project I decided to solder the hardware together to have permanent, st
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_ATTEMPT_2.jpg" alt="PX_ATTEMPT_2" width="400">
 
-**Final Attempt**:
+**Final Layout**:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_BOARD.jpg" alt="PX_BOARD" width="400">
 
