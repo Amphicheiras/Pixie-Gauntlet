@@ -1,5 +1,7 @@
 # Pixie Gauntlet
 
+***Under continuous development***
+
 ## HARDWARE:
 
 For this project I decided to solder the hardware together to have permanent, stable connections. I started with a perf board and designed the possible layouts in order to get the most compact piece of hardware. The following is what I came at:
@@ -25,6 +27,8 @@ For the battery gauge I make a simple voltage divider using 2x10kΩ resistors. T
 
 Notice that the V+ of the battery is connected to the switch (S1), and both the gauge and the TP4056's B+ are connected to the other end of the switch, to completely kill the amperage from the system.
 
+*Thought - The battery gauge interferes with the IMU, maybe pull-up resistors for the I2C lines will fix this*
+
 ## EMBEDDED SOFTWARE:
 
 The Pixie project is a continuation of the UF0 project, aiming for better code practices and motion sensor algorithms. The code structure is now more explicit, with better hierarchy and OOP, still, under development.
@@ -43,12 +47,34 @@ The hardware components drive, unsuprisingly, the hardware parts of the project.
 
 The music components handle MIDI operations and musical theory (soon to come).
 
+**PX_BUTTON**: Handles button operations and logic.
+
+**PX_GYRO**: Handles Inertial Measurement Unit related tasks.
+
+**PX_LED**: Soon to be the LED driver.
+
+**PX_POWER**: Handles the battery gauge system.
+
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_src_music_components.png" alt="PX_SRC_MUSIC">
+
+**PX_MIDI**: Handles MIDI related operations and MIDI-over-WiFi packaging.
 
 The network components handle the WiFi connections and the  webserver functionality.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_src_network_components.png" alt="PX_SRC_NETWORK">
 
+**PX_WEBPAGES**: Holds the HTML pages called from the webserver.
+
+**PX_WEBSERVER**: Handles webserver callbacks.
+
+**PX_WIFI**: Handles WiFi Access Point and Station operations.
+
 The OS components are in charge of the operation of the whole system and hold third party algorithms.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_src_OS_components.png" alt="PX_SRC_OS">
+
+**PX_BLACKMAGIC**: Does things no one knows how they work.
+
+**PX_FSM**: Handles higher level system operations.
+
+**PX_OBJECT**: Soon to be the top abstraction level of the project software.
