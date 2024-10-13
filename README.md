@@ -30,7 +30,7 @@ Externally powered by lithium batteries:
     - Button 3(Blue): Enable/Disable Acceleration Z transmission
   - Each button's LED blinks to the corresponding active mode
 
-***Under continuous development***
+*~ Under continuous development ~*
 
 ## HARDWARE:
 
