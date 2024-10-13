@@ -64,7 +64,7 @@ private:
 	// Acceleration MATH for drum hit
 	int hit = -1;
 	int drumHitDebounce = 100; /*(ms)*/
-	int drumHitThreshold = 650;
+	int drumHitThreshold = 10;
 	// X
 	double previousAccelX = 0.0;
 	double highestAccelX = 0.0;

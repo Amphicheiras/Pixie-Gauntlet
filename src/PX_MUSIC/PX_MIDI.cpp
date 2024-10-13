@@ -59,19 +59,42 @@ void PX_MIDI::disableControl()
 	controlsActive = false;
 }
 
+void PX_MIDI::enableDelay()
+{
+	sendMIDIControlChange(MIDI_CC, 127, 7);
+	delayActive = true;
+}
+
+void PX_MIDI::disableDelay()
+{
+	sendMIDIControlChange(MIDI_CC, 0, 7);
+	delayActive = false;
+}
+
+bool PX_MIDI::getControlsActive()
+{
+	return controlsActive;
+}
+
+bool PX_MIDI::getDelayActive()
+{
+	return delayActive;
+}
+
 // Drum hit gesture
 void PX_MIDI::drumHitMIDI()
 {
 	// If drum is hit
 	if (gyroDriver->drumHit() > 0)
 	{
-		// Send MIDI Note On when drum hit
-		MIDI.sendNoteOn(40 + blackmagic->getVirtualTarget(), 100, 1);
-		// Send MIDI Note Off 10ms after drum hit
-		if ((millis() - MIDI_t0) > 10)
+		// Toggle MIDI Note on drum hit
+		if (!isPlaying)
 		{
-			MIDI.sendNoteOff(40 + blackmagic->getVirtualTarget(), 100, 1);
-			MIDI_t0 = millis();
+			sendMIDINoteOn(10, 100, 5);
+		}
+		else
+		{
+			sendMIDINoteOff(10, 100, 5);
 		}
 	}
 }
@@ -85,18 +108,11 @@ void PX_MIDI::loop()
 	{
 		sendControls();
 	}
+	drumHitMIDI();
 }
 
 void PX_MIDI::sendControls()
 {
-	if (gyroDriver->getVelocityX() > 0)
-	{
-		MIDI.sendNoteOn(20, 100, 1);
-	}
-	else
-	{
-		MIDI.sendNoteOff(20, 100, 1);
-	}
 	// Transmit YPR
 	if (pitchTransmit)
 	{
@@ -116,18 +132,18 @@ void PX_MIDI::sendControls()
 	// Transmit XYZ
 	if (xTransmit)
 	{
-		xMIDI = position2MIDI(gyroDriver->getPositionX(), -90, 90, false);
-		MIDI.sendControlChange(MIDI_CC, xMIDI, 4);
+		accelerationXMIDI = acceleration2MIDI(gyroDriver->getAccelerationX(), -10, 10);
+		MIDI.sendControlChange(MIDI_CC, accelerationXMIDI, 4);
 	}
 	if (yTransmit)
 	{
-		yMIDI = position2MIDI(gyroDriver->getPositionY(), -90, 90, false);
-		MIDI.sendControlChange(MIDI_CC, yMIDI, 5);
+		accelerationYMIDI = acceleration2MIDI(gyroDriver->getAccelerationY(), -10, 10, true);
+		MIDI.sendControlChange(MIDI_CC, accelerationYMIDI, 5);
 	}
 	if (zTransmit)
 	{
-		zMIDI = position2MIDI(gyroDriver->getPositionZ(), -90, 90, false);
-		MIDI.sendControlChange(MIDI_CC, zMIDI, 6);
+		accelerationZMIDI = acceleration2MIDI(gyroDriver->getAccelerationZ(), -10, 10);
+		MIDI.sendControlChange(MIDI_CC, accelerationZMIDI, 6);
 	}
 }
 // Send toggle on from trigger 3
@@ -214,11 +230,17 @@ void PX_MIDI::soloTransmission(bool *toSolo)
 void PX_MIDI::sendMIDINoteOn(int note, int velocity, int channel)
 {
 	MIDI.sendNoteOn(note, velocity, channel);
+	isPlaying = true;
 }
 // Send MIDI note off
 void PX_MIDI::sendMIDINoteOff(int note, int velocity, int channel)
 {
 	MIDI.sendNoteOff(note, velocity, channel);
+	isPlaying = false;
+}
+bool PX_MIDI::getIsPlaying()
+{
+	return isPlaying;
 }
 // Send MIDI note on
 void PX_MIDI::sendMIDIChordOn(int note, int velocity, int channel)
@@ -260,6 +282,37 @@ double PX_MIDI::degrees2MIDI(double tilt, int fromAngle, int toAngle, bool shift
 		return (127 - tilt);
 	else
 		return tilt;
+}
+// position: Gyro input, fromPosition: lowerLimit, toPosition: higherLimit, invert: invert position direction
+double PX_MIDI::acceleration2MIDI(double acceleration, int fromAcceleration, int toAcceleration, bool invert)
+{
+	// Return if out of bounds
+	if (acceleration < fromAcceleration)
+	{
+		return 0;
+	}
+	if (acceleration > toAcceleration)
+	{
+		return 127;
+	}
+	// Map [-fromAngle, toAngle] -> [0, 127]
+	if (acceleration < 0)
+	{
+		acceleration = map(acceleration, 0, fromAcceleration, 64, 0);
+	}
+	else
+	{
+		acceleration = map(acceleration, 0, toAcceleration, 64, 127);
+	}
+	// Invert movement direction
+	if (invert)
+	{
+		return (127 - acceleration);
+	}
+	else
+	{
+		return acceleration;
+	}
 }
 // position: Gyro input, fromPosition: lowerLimit, toPosition: higherLimit, invert: invert position direction
 double PX_MIDI::position2MIDI(double position, int fromPosition, int toPosition, bool invert)
@@ -356,4 +409,49 @@ float PX_MIDI::getMIDIRoll()
 float PX_MIDI::getMIDIYaw()
 {
 	return yawMIDI;
+}
+
+float PX_MIDI::getMIDIAccelerationX()
+{
+	return accelerationXMIDI;
+}
+
+float PX_MIDI::getMIDIAccelerationY()
+{
+	return accelerationYMIDI;
+}
+
+float PX_MIDI::getMIDIAccelerationZ()
+{
+	return accelerationZMIDI;
+}
+
+void PX_MIDI::setAccelXTransmission(bool accelXTransmission)
+{
+	this->xTransmit = accelXTransmission;
+}
+
+void PX_MIDI::setAccelYTransmission(bool accelYTransmission)
+{
+	this->yTransmit = accelYTransmission;
+}
+
+void PX_MIDI::setAccelZTransmission(bool accelZTransmission)
+{
+	this->zTransmit = accelZTransmission;
+}
+
+bool PX_MIDI::getAccelXTransmission()
+{
+	return xTransmit;
+}
+
+bool PX_MIDI::getAccelYTransmission()
+{
+	return yTransmit;
+}
+
+bool PX_MIDI::getAccelZTransmission()
+{
+	return zTransmit;
 }

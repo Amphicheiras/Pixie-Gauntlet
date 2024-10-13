@@ -18,6 +18,8 @@ private:
 	bool isConnected{false};
 	// YRP After degrees2MIDI
 	float pitchMIDI{0}, rollMIDI{0}, yawMIDI{0};
+	// XYZ After acceleration2MIDI
+	float accelerationXMIDI{0}, accelerationYMIDI{0}, accelerationZMIDI{0};
 	// XYZ After position2MIDI
 	float xMIDI{0}, yMIDI{0}, zMIDI{0};
 	// A MIDI Note buffer has 1 value
@@ -27,9 +29,11 @@ private:
 	double Arp_1 = 0.0;
 	double Arp_2 = 0.0;
 	double Arp_3 = 0.0;
-	bool controlsActive = true;
+	bool controlsActive = false;
+	bool delayActive = false;
 	// Arpeggiator
 	bool arpFlag = false;
+	bool isPlaying = false;
 
 public:
 	PX_MIDI();
@@ -38,6 +42,10 @@ public:
 	// enableMIDIControl?
 	void enableControl();
 	void disableControl();
+	void enableDelay();
+	void disableDelay();
+	bool getControlsActive();
+	bool getDelayActive();
 	// Drum hit gesture
 	void drumHitMIDI();
 	void loop();
@@ -80,13 +88,25 @@ public:
 	double degrees2MIDI(double tilt, int fromAngle, int toAngle, bool shift = false, bool invert = false);
 	// position: Gyro input, fromPosition: lowerLimit, toPosition: higherLimit, invert: invert position direction
 	double position2MIDI(double position, int fromPosition, int toPosition, bool invert);
-	bool getPitchTransmission();
-	bool getRollTransmission();
-	bool getYawTransmission();
+	// position: Gyro input, fromPosition: lowerLimit, toPosition: higherLimit, invert: invert position direction
+	double acceleration2MIDI(double acceleration, int fromAcceleration, int toAcceleration, bool invert = false);
 	void setPitchTransmission(bool pitchTransmission);
 	void setRollTransmission(bool rollTransmission);
 	void setYawTransmission(bool yawTransmission);
+	bool getPitchTransmission();
+	bool getRollTransmission();
+	bool getYawTransmission();
+	void setAccelXTransmission(bool accelXTransmission);
+	void setAccelYTransmission(bool accelYTransmission);
+	void setAccelZTransmission(bool accelZTransmission);
+	bool getAccelXTransmission();
+	bool getAccelYTransmission();
+	bool getAccelZTransmission();
 	float getMIDIPitch();
 	float getMIDIRoll();
 	float getMIDIYaw();
+	float getMIDIAccelerationX();
+	float getMIDIAccelerationY();
+	float getMIDIAccelerationZ();
+	bool getIsPlaying();
 };

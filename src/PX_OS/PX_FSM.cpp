@@ -24,16 +24,14 @@ void PX_FSM::loop()
 {
 	if (monitorActive && (millis() - FSM_t0) > monitorHz)
 	{
-		DBG(F("\nDegrees Roll:"), gyroDriver->getRoll(), F("\tMIDI Roll:"), midiDriver->getMIDIRoll());
-		DBG(F("Degrees Pitch:"), gyroDriver->getPitch(), F("\tMIDI Pitch:"), midiDriver->getMIDIPitch());
+		DBG(F("\nDegrees Pitch:"), gyroDriver->getPitch(), F("\tMIDI Pitch:"), midiDriver->getMIDIPitch());
+		DBG(F("Degrees Roll:"), gyroDriver->getRoll(), F("\tMIDI Roll:"), midiDriver->getMIDIRoll());
 		DBG(F("Degrees Yaw:"), gyroDriver->getYaw(), F("\tMIDI Yaw:"), midiDriver->getMIDIYaw());
-		DBG(F("State Roll, Pitch, Yaw:"), midiDriver->getRollTransmission(), midiDriver->getPitchTransmission(), midiDriver->getYawTransmission());
-		// DBG(F("Raw X:"), xPosition, F("\tMIDI X:"), xMIDI);
-		// DBG(F("Raw Y:"), yPosition, F("\tMIDI Y:"), yMIDI);
-		// DBG(F("Raw Z:"), zPosition, F("\tMIDI Z:"), zMIDI);
-		// DBG(F("State X, Y, Z:"), xTransmit, yTransmit, zTransmit);
-		// DBG(F("Virtual Target:"), virtualTarget);
-		// DBG(F("IP:"), WiFi.localIP());
+		DBG(F("State Pitch, Roll, Yaw:"), midiDriver->getPitchTransmission(), midiDriver->getRollTransmission(), midiDriver->getYawTransmission());
+		DBG(F("Acceleration X:"), gyroDriver->getAccelerationX(), F("\tMIDI Acceleration X:"), midiDriver->getMIDIAccelerationX());
+		DBG(F("Acceleration Y:"), gyroDriver->getAccelerationY(), F("\tMIDI Acceleration Y:"), midiDriver->getMIDIAccelerationY());
+		DBG(F("Acceleration Z:"), gyroDriver->getAccelerationZ(), F("\tMIDI Acceleration Z:"), midiDriver->getMIDIAccelerationZ());
+		DBG(F("State X, Y, Z:"), midiDriver->getAccelXTransmission(), midiDriver->getAccelYTransmission(), midiDriver->getAccelZTransmission());
 		FSM_t0 = millis();
 	}
 }

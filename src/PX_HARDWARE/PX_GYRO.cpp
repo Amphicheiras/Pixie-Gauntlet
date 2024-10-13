@@ -29,6 +29,22 @@ void PX_GYRO::loop()
 	getSensorReadings();
 	// Calculate spatial data
 	getMotionTracking();
+
+	// Leave for drum hit optimization
+	if (accelerationZ > highestAccelZ)
+		highestAccelZ = accelerationZ;
+	if (accelerationZ - previousAccelZ > highestDiffZ)
+		highestDiffZ = accelerationZ - previousAccelZ;
+	if ((millis() - GYRO_t0) > 1)
+	{
+		// DBG("");
+		// DBG("Current acceleration Z:", accelerationZ);
+		// DBG("Previous acceleration Z:", previousAccelZ);
+		DBG("Current - Previous acceleration Z:", accelerationZ - previousAccelZ);
+		// DBG("Highest acceleration Z:", highestAccelZ);
+		// DBG("Highest diff in acceleration Z:", highestDiffZ);
+		GYRO_t0 = millis();
+	}
 }
 
 void PX_GYRO::getMotionTracking()
@@ -105,7 +121,7 @@ int PX_GYRO::drumHit()
 		if (accelDiffZ > drumHitThreshold)
 		{
 			// If hit, return velocity!
-			return map(accelDiffZ - drumHitThreshold, 0, 2000, 0, 127);
+			return map(accelDiffZ - drumHitThreshold, 0, 20, 0, 127);
 		}
 		else
 		{
@@ -113,21 +129,6 @@ int PX_GYRO::drumHit()
 		}
 		GYRO_t1 = millis();
 	}
-
-	// // Leave for drum hit optimization
-	// if (currentAccelZ > highestAccelZ)
-	//   highestAccelZ = currentAccelZ;
-	// if (currentAccelZ - previousAccelZ > highestDiff)
-	//   highestDiff = currentAccelZ - previousAccelZ;
-	// if ((millis() - GYRO_t0) > 1000){
-	//     DBG("");
-	//     DBG("Current acceleration Z:", currentAccelZ);
-	//     DBG("Previous acceleration Z:", previousAccelZ);
-	//     DBG("Current - Previous acceleration Z:", currentAccelZ - previousAccelZ);
-	//     DBG("Highest acceleration Z:", highestAccelZ);
-	//     DBG("Highest diff in acceleration Z:", highestDiff);
-	//     GYRO_t0 = millis();
-	// }
 	return -1;
 }
 
