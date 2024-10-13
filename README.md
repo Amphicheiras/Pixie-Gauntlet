@@ -23,7 +23,7 @@ For the battery gauge I make a simple voltage divider using 2x10kΩ resistors. T
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_schem_POWER_.png" alt="PX_BOARD_PCB" width="400">
 
-Notice that the V+ of the battery is connected to the switch, and both the gauge and the TP4056's B+ are connected to the other end of the switch (S1), to completely kill the amperage from the system.
+Notice that the V+ of the battery is connected to the switch (S1), and both the gauge and the TP4056's B+ are connected to the other end of the switch, to completely kill the amperage from the system.
 
 ## EMBEDDED SOFTWARE:
 
