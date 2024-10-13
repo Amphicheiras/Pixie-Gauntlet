@@ -19,6 +19,12 @@ The ESP32 pinout for this project can be seen below:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_ESP32_PINOUT.png?raw=true" alt="PX_ESP32_PINOUT" width="700">
 
+For the battery gauge I make a simple voltage divider using 2x10kΩ resistors. This is necessary because the output voltage of the battery (3.7V - 4,2V) exceeds the maximum Vin (3.3V) of the ESP32 analog input pins. The power schematic follows:
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_schem_POWER_.png" alt="PX_BOARD_PCB" width="400">
+
+Notice that the V+ of the battery is connected to the switch, and both the gauge and the TP4056 are connected to the other end of the switch, to completely kill the amperage from the system.
+
 ## EMBEDDED SOFTWARE:
 
 The Pixie project is a continuation of the UF0 project, aiming for better code practices and motion sensor algorithms. The code structure is now more explicit, with better hierarchy and OOP, still, under development.
