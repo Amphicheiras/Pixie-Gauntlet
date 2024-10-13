@@ -4,7 +4,7 @@
 constexpr int I2C_SCL = 26;
 constexpr int I2C_SDA = 27;
 // Main DBG
-constexpr bool monitorActive = false;
+constexpr bool monitorActive = true;
 constexpr int monitorHz = 1000;
 
 class PX_GYRO;

@@ -30,21 +30,21 @@ void PX_GYRO::loop()
 	// Calculate spatial data
 	getMotionTracking();
 
-	// Leave for drum hit optimization
-	if (accelerationZ > highestAccelZ)
-		highestAccelZ = accelerationZ;
-	if (accelerationZ - previousAccelZ > highestDiffZ)
-		highestDiffZ = accelerationZ - previousAccelZ;
-	if ((millis() - GYRO_t0) > 1)
-	{
-		// DBG("");
-		// DBG("Current acceleration Z:", accelerationZ);
-		// DBG("Previous acceleration Z:", previousAccelZ);
-		DBG("Current - Previous acceleration Z:", accelerationZ - previousAccelZ);
-		// DBG("Highest acceleration Z:", highestAccelZ);
-		// DBG("Highest diff in acceleration Z:", highestDiffZ);
-		GYRO_t0 = millis();
-	}
+	// // Leave for drum hit optimization
+	// if (accelerationZ > highestAccelZ)
+	// 	highestAccelZ = accelerationZ;
+	// if (accelerationZ - previousAccelZ > highestDiffZ)
+	// 	highestDiffZ = accelerationZ - previousAccelZ;
+	// if ((millis() - GYRO_t0) > 1)
+	// {
+	// 	// DBG("");
+	// 	// DBG("Current acceleration Z:", accelerationZ);
+	// 	// DBG("Previous acceleration Z:", previousAccelZ);
+	// 	DBG("Current - Previous acceleration Z:", accelerationZ - previousAccelZ);
+	// 	// DBG("Highest acceleration Z:", highestAccelZ);
+	// 	// DBG("Highest diff in acceleration Z:", highestDiffZ);
+	// 	GYRO_t0 = millis();
+	// }
 }
 
 void PX_GYRO::getMotionTracking()
