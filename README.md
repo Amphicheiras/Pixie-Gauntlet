@@ -10,7 +10,7 @@ Externally powered by lithium batteries:
 
 **Features**:
 
-- 6-dimentional motion tracking (3x Euler Angles + 3x Linear Acceleration)
+- 6-dimensional motion tracking (3x Euler Angles + 3x Linear Acceleration)
 - MIDI over WiFi
 - Control Webpage
 - Li-ion power supply
@@ -52,7 +52,7 @@ The circuit without the ESP32. You can now see the BNO055 (IMU) (black) and the 
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_WITHOUT_ESP32.jpg" alt="PX_WITHOUT_ESP32" width="400">
 
-Then the caseing was deisgned.
+Then the casing was designed.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_CASEING.jpg" alt="PX_CASEING" width="400">
 
@@ -109,7 +109,7 @@ The basic components of this project are the:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_src_structure.png" alt="PX_SRC_STRUCTURE">
 
-The hardware components drive, unsuprisingly, the hardware parts of the project.
+The hardware components drive, unsurprisingly, the hardware parts of the project.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_src_hardware_components.png" alt="PX_SRC_HARDWARE">
 
