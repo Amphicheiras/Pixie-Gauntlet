@@ -58,15 +58,15 @@ Then the caseing was deisgned.
 
 Now, the soldering..
 
-**Phase #1**:
+**Phase #1**: Solder the hardware component to the perf board.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_1.jpg" alt="PX_EARLY_BOARD_1" width="400">
 
-**Phase #2**:
+**Phase #2**: Solder the connections between the hardware components.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_2.jpg" alt="PX_EARLY_BOARD_2" width="400">
 
-**Phase #3**:
+**Phase #3**: Solder the jumper wires for the rest of the connections.
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_3.jpg" alt="PX_EARLY_BOARD_3" width="400">
 
