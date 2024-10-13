@@ -1,7 +1,5 @@
 # Pixie Gauntlet
 
-A compact sequel of the [UF0](https://github.com/Amphicheiras/Wireless-MIDI-controller-DEMO) wireless MIDI controller, focused on circuit design, code development, and motion tracking.
-
 ## HARDWARE:
 
 For this project I decided to solder the hardware together to have permanent, stable connections. I started with a perf board and designed the possible layouts in order to get the most compact piece of hardware. The following is what I came at:
