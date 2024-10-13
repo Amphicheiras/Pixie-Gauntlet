@@ -48,6 +48,14 @@ For this project I decided to solder the hardware together to have permanent, st
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_BOARD.jpg" alt="PX_BOARD" width="400">
 
+The circuit without the ESP32. You can now see the BNO055 (IMU) (black) and the TP4056 (battery (dis)charger) (blue) ICs.
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_WITHOUT_ESP32.jpg" alt="PX_WITHOUT_ESP32" width="400">
+
+Then the caseing was deisgned.
+
+<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_CASEING.jpg" alt="PX_CASEING" width="400">
+
 Now, the soldering..
 
 **Phase #1**:
@@ -62,15 +70,7 @@ Now, the soldering..
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_EARLY_BOARD_3.jpg" alt="PX_EARLY_BOARD_3" width="400">
 
-The circuit without the ESP32. You can now see the BNO055 (IMU) (black) and the TP4056 (battery (dis)charger) (blue) IC's.
-
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_WITHOUT_ESP32.jpg" alt="PX_WITHOUT_ESP32" width="400">
-
-Then the caseing was deisgned.
-
-<img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_CASEING.jpg" alt="PX_CASEING" width="400">
-
-The following is the final circuit product:
+The final circuit:
 
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_TOP.jpg?raw=true" alt="PX_BOARD_TOP" width="400">
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_Board_BOTTOM.jpg?raw=true" alt="PX_BOARD_BOTTOM" width="400">
