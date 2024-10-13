@@ -4,6 +4,11 @@
 
 **!!! DEMO VIDEO ---> https://drive.google.com/file/d/1lhsPMKKbq0_hhStSr28U_LeOdEvPMwc7/view?usp=sharing <--- !!!**
 
+**On the demo video**: 
+  - The audio is the real-time audio recorded from the DAW.
+  - The controller preset is a SAW wave with parameters on filters and modulators.
+  - Everything other than the kick, bass, and drums, is the sound of the preset.
+
 <img src="https://github.com/Amphicheiras/Pixie-Gauntlet/blob/main/media/PX_PROMO.jpg" alt="PX_BOARD_TOP" width="400">
 
 Externally powered by lithium batteries:
