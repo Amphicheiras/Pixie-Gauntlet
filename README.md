@@ -2,7 +2,7 @@
 
 ## Compact Motion-Tracking Wireless MIDI Controller
 
-**!!! DEMO VIDEO ---> https://drive.google.com/file/d/1lhsPMKKbq0_hhStSr28U_LeOdEvPMwc7/view?usp=sharing <--- !!!**
+** DEMO VIDEO ---> https://drive.google.com/file/d/1lhsPMKKbq0_hhStSr28U_LeOdEvPMwc7/view?usp=sharing <--- **
 
 **On the demo video**: 
   - The audio is the real-time audio recorded from the DAW.
