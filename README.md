@@ -28,7 +28,7 @@ Externally powered by lithium batteries:
   - By pressing all 3 buttons, you go to the next mode 
   - Mode 1:
     - Button 1(Red): Play/Stop MIDI Note
-    - Button 2(Green): Activate/Deactivate MIDI Controls
+    - Button 2(Green): Enable/Disable MIDI Controls
     - Button 3(Blue): Custom MIDI On/Off parameter (Mapped from DAW)
   - Mode 2:
     - Button 1(Red): Enable/Disable Pitch transmission
