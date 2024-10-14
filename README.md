@@ -17,7 +17,9 @@ Externally powered by lithium batteries:
 
 **Features**:
 
-- 6-dimensional motion tracking (3x Euler Angles + 3x Linear Acceleration)
+- 6-dimensional motion tracking
+  - 3x Euler Angles + 3x Linear Acceleration
+  - Shake to Activate! (shake gesture triggers MIDI note on/off)
 - MIDI over WiFi
 - Control Webpage
   - Solo/Start/Stop Transmissions
